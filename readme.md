@@ -1,12 +1,5 @@
 # Celebrity Face Recognition System
 
-![](ui_snapshot_1.png)
-![](ui_snapshot_2.png)
-![](ui_snapshot_3.png)
-![](ui_snapshot_4.png)
-![](ui_snapshot_5.png)
-![](ui_snapshot_6.png)
-
 ## Overview
 This project identifies celebrities from images using image processing and machine learning techniques. It combines OpenCV for face detection, Wavelet Transform for feature extraction, and SVM for classification.
 
