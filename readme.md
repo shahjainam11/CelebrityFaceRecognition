@@ -18,17 +18,17 @@ The system can classify the following 19 individuals across different sports:
 * 🌐 Simple and interactive web UI
 
 ## 🛠️ Tech Stack
-* **Programming Language:** Python
-* **Web Framework:** Flask
-* **UI Framework:** Gradio
-* **Face Detection:** OpenCV
+* **Programming Language:** Python 3
+* **Web/UI Framework:** Gradio (Acts as the HTTP Web Server & Interactive Dashboard)
+* **Face Analytics / Detection:** DeepFace & OpenCV (Haar Cascades)
 * **Feature Extraction:** PyWavelets (Wavelet Transform)
-* **Model Classification:** Scikit-learn (Support Vector Machine / SVM)
-* **Data Handling:** NumPy & Joblib
-* **Frontend:** HTML, CSS, JavaScript
+* **Model Classification:** Scikit-learn (SVM / Random Forest)
+* **Data Handling & Math:** NumPy & Joblib
+* **Data Visualization:** Matplotlib & Seaborn
+* **Development IDEs:** Jupyter Notebook, VS Code, & PyCharm
 
 ## Project Structure
-* `app.py`: The main Flask application file representing the web UI.
+* `app.py`: The main application code running the Gradio web server and UI.
 * `server/`: Contains backend utility files (like `util.py`) for processing images, face detection, and serving predictions.
 * `server/artifacts/`: Contains the pre-computed dictionaries and the saved SVM model.
 * `model/`: Jupyter Notebooks (`data_cleaning.ipynb`, `sports_celebrity_classification.ipynb`) for dataset preprocessing and model training.
@@ -59,7 +59,7 @@ The system can classify the following 19 individuals across different sports:
    pip install -r requirements.txt
    ```
 
-4. **Run the Flask server**
+4. **Run the application server**
    ```bash
    python app.py
    ```
@@ -67,7 +67,7 @@ The system can classify the following 19 individuals across different sports:
 5. **Open browser**
    Navigate to:
    ```
-   http://127.0.0.1:5000/
+   http://127.0.0.1:7860/
    ```
 
 ## 📊 Dataset
