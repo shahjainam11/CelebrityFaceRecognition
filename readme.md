@@ -1,7 +1,7 @@
 # Celebrity Face Recognition System
 
 ## Overview
-This project identifies celebrities from images using image processing and machine learning techniques. It combines OpenCV for face detection, Wavelet Transform for feature extraction, and SVM for classification.
+This project identifies celebrities from images using deep learning and vector matching techniques. It leverages MTCNN for precise face detection, FaceNet (via DeepFace) for feature extraction (creating 128-dimensional embeddings), and Spotify's Annoy Index for lightning-fast facial similarity matching and classification.
 
 ### Categorized Celebrities
 The system can classify the following 19 individuals across different sports:
@@ -10,19 +10,20 @@ The system can classify the following 19 individuals across different sports:
 * **Football ⚽**: Lionel Messi
 
 ## Features
-* 📷 Upload image for prediction
-* 👁️ Face detection using OpenCV
-* 🧠 Feature extraction using Wavelet Transform
-* 🤖 Celebrity classification using SVM
-* 📊 Confidence score display
-* 🌐 Simple and interactive web UI
+* 📷 Live webcam capture and image upload support
+* 👁️ Precise face detection and cropping using MTCNN
+* 🧠 Feature extraction using FaceNet (DeepFace)
+* 🤖 Fast celebrity vector-matching using Spotify Annoy
+* 📊 Multi-model confidence score display and probability comparison
+* 🌐 Modern, glassmorphism-styled interactive web UI using Gradio
 
 ## 🛠️ Tech Stack
 * **Programming Language:** Python 3
 * **Web/UI Framework:** Gradio (Acts as the HTTP Web Server & Interactive Dashboard)
-* **Face Analytics / Detection:** DeepFace & OpenCV (Haar Cascades)
-* **Feature Extraction:** PyWavelets (Wavelet Transform)
+* **Face Analytics / Detection:** DeepFace (MTCNN Model)
+* **Feature Extraction:** FaceNet (128-Dimensional Embeddings)
 * **Model Classification:** Scikit-learn (SVM / Random Forest)
+* **Image Processing:** OpenCV & PIL (Image resizing, cropping, and color conversion)
 * **Data Handling & Math:** NumPy & Joblib
 * **Data Visualization:** Matplotlib & Seaborn
 * **Development IDEs:** Jupyter Notebook, VS Code, & PyCharm
@@ -36,11 +37,11 @@ The system can classify the following 19 individuals across different sports:
 * `requirements.txt`: List of Python library dependencies.
 
 ## How It Works
-1. Upload an image
-2. System detects face using OpenCV
-3. Extract features using Wavelet Transform
-4. Model predicts celebrity using SVM
-5. Result is displayed with confidence score
+1. Upload an image or capture via live webcam.
+2. The system locates and crops the face using **MTCNN**.
+3. It extracts a 128-dimensional facial embedding using the **FaceNet CNN**.
+4. The **Annoy Index** calculates the angular distance against the database of known celebrities to find the closest match.
+5. The result is displayed alongside the celebrity's details, sport icons, and visualization of the matching confidence.
 
 ## How to Run
 
@@ -81,10 +82,10 @@ The system can classify the following 19 individuals across different sports:
 * Sensitive to lighting and pose variations
 
 ## 🔮 Future Improvements
-* Add Deep Learning (CNN) model
-* Real-time face detection using webcam
-* Expand dataset with more celebrities
-* Improve UI with animations
+* Expand dataset with more sports and international celebrities
+* Optimize database size and scaling for edge devices
+* Add real-time video stream continuous tracking
+* Support for multiple face detection in a single group photo
 
 ## ⭐ Acknowledgment
 Inspired by machine learning and computer vision projects for educational purposes.
