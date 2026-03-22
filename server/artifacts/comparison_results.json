@@ -1,0 +1,6 @@
+{
+    "SVM": 82.6,
+    "Random_Forest": 81.7,
+    "MobileNetV2": 66.3,
+    "DeepFace_Annoy": 0.985
+}
